@@ -95,7 +95,7 @@ html{-webkit-text-size-adjust:100%}
 html{font-size:clamp(15px,.55vw + 12px,22px)}
 body{font-size:1rem;padding-left:max(clamp(16px,3vw,64px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,3vw,64px),env(safe-area-inset-right,0px))}
 .wrap{max-width:none;width:100%}
-.hero h1{font-size:min(calc((100vw - 2*clamp(16px,3vw,64px))/4.9),42vh);max-width:none;white-space:nowrap}
+.hero h1{font-size:min(calc((100vw - 2*clamp(16px,3vw,64px))/4.9),26vh);max-width:none;white-space:nowrap}
 .grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:clamp(12px,1.4vw,24px)}
 .read{max-width:min(100%,80ch)}
 #pane{display:block}

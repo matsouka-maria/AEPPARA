@@ -10,7 +10,7 @@ function fitTitle(){
   if(!h||!em)return;
   h.style.fontSize="100px";
   const avail=h.parentElement.clientWidth,w=em.getBoundingClientRect().width;
-  if(w>0)h.style.fontSize=Math.min(100*avail/w,innerHeight*.42)+"px";
+  if(w>0)h.style.fontSize=Math.min(100*avail/w,innerHeight*.26)+"px";
 }
 window.addEventListener("resize",fitTitle);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitTitle);
