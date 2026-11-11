@@ -90,4 +90,14 @@ pre code{background:none;padding:0}
 @media (prefers-reduced-motion:no-preference){.ch,.btn,.tab{transition:border-color .15s,transform .15s}.ch:hover{transform:translateY(-3px)}}
 html{-webkit-text-size-adjust:100%}
 @media (max-width:640px){.grid{grid-template-columns:1fr}.tabs{gap:5px}.tab{padding:8px 12px;font-size:.85rem}.ch{min-height:130px}.stackbox{width:130px}}
-@media (min-width:1500px){.wrap{max-width:1280px}.grid{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}body{font-size:17px}}
+
+/* fluid: fill the whole screen on any device */
+html{font-size:clamp(15px,.55vw + 12px,22px)}
+body{font-size:1rem;padding-left:max(clamp(16px,3vw,64px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,3vw,64px),env(safe-area-inset-right,0px))}
+.wrap{max-width:none;width:100%}
+.hero h1{font-size:min(calc((100vw - 2*clamp(16px,3vw,64px))/4.9),42vh);max-width:none;white-space:nowrap}
+.grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:clamp(12px,1.4vw,24px)}
+.read{max-width:min(100%,80ch)}
+#pane{display:block}
+@media (min-width:1000px){#pane:has(.card){display:grid;grid-template-columns:repeat(auto-fit,minmax(26rem,1fr));gap:16px;align-items:start}#pane>.ref{grid-column:1/-1}.card{margin-bottom:0}}
+.fc{max-width:min(100%,60rem)}.fcard{min-height:clamp(220px,40vh,480px);font-size:clamp(1.1rem,1.2vw + .8rem,2rem)}
