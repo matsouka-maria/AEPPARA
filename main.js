@@ -5,6 +5,16 @@ const live=()=>CH.filter(c=>!c.soon);
 function pct(){const d=live().filter(c=>S[c.id]).length;return d/live().length}
 const yt=q=>"https://www.youtube.com/results?search_query="+encodeURIComponent(q);
 
+function fitTitle(){
+  const h=document.querySelector(".hero h1"),em=h&&h.querySelector("em");
+  if(!h||!em)return;
+  h.style.fontSize="100px";
+  const avail=h.parentElement.clientWidth,w=em.getBoundingClientRect().width;
+  if(w>0)h.style.fontSize=Math.min(100*avail/w,innerHeight*.42)+"px";
+}
+window.addEventListener("resize",fitTitle);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitTitle);
+
 function home(){
   const p=pct();
   app.innerHTML=`<section class="hero"><h1><em>ΑΕΠΠΑΡΑ</em></h1></section>
@@ -12,6 +22,7 @@ function home(){
    ${S[c.id]?`<span class="tag done">ολοκληρώθηκε</span>`:""}</button>`).join("")}</div>
 `;
   app.querySelectorAll(".ch").forEach(b=>b.onclick=()=>{location.hash=b.dataset.id});
+  fitTitle();
 }
 
 function chapter(c,tab){
